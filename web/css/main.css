@@ -31,20 +31,20 @@ header {
 	background-color: gray;
 	text-align: center;
 	font-weight: bold;
-	height: 1.4em;
+	height: 0em;
 	color: white;
 	top: 0;
 }
 footer {
 	background-color: red;
 	opacity: 0.5;
-	height: 3em;
+	height: 0em;
 	bottom: 0;
 }
 .body {
 	overflow: auto;
-	bottom: 3em;
-	top: 1.4em;
+	bottom: 0em;
+	top: 0em;
 }
 
 
@@ -61,4 +61,12 @@ footer {
 	background-image: url(../img/check.gif);
 	background-repeat: no-repeat;
 	background-position: 1em center;
+}
+
+#page-lists .listItem:nth-child(1) {
+	border-top: 0px;
+}
+#page-lists .listItem {
+	background-color: #447DD0;
+	border-top: 1px solid black;
 }

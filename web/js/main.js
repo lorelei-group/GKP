@@ -1,39 +1,30 @@
-//if (!localStorage.lists)
-//	localStorage.lists = JSON.stringify([{name:'a'},{name:'b'}]);
-//var lists = JSON.parse(localStorage.lists);
+define(['./data', './list', './switcher'], function(data, List, Switcher) {
 
-var lists =[];
+	var pages = new Switcher();
+	pages.add('mainView', $('#page-lists'));
+	pages.add('listView', $('#page-tasks'));
 
-for (var i = 0; i < 20; i++)
-	lists[i] = { id: i + 1, name: "Item " + (i+1) };
+	var list = new List($('#lists-container'));
+	list.setEmptyMessage('You have no lists yet')
+	list.setItemTemplate('{{name}}');
+	list.setItems(data.lists);
 
-function id(name) {
-	return document.getElementById(name);
-}
+	var tasks = new List($('#tasks-container'));
+	tasks.setEmptyMessage('No tasks here! Well done ;)')
+	tasks.setItemTemplate('{{name}}');
 
-
-var pages = new Switcher();
-pages.add('mainView', id('page-lists'));
-pages.add('listView', id('page-tasks'));
-
-
-setTimeout(function() {
-	var loading = document.getElementById('load-placeholder');
-	loading.parentNode.removeChild(loading);
-
-	var list = id('lists-container');
-	list.innerHTML = renderList(lists, 'name', 'You have no lists yet');
-
-	var states = {};
-	list.addEventListener('touchend', function(event) {
-		var el = new DOM(event.target);
-
-		if (el.hasClass('listItem')) {
-			el.toogleClass('selected');
-			var id = el.getData('id');
-			states[id] = !states[id];
-		}
+	list.on('item-touch', function(id) {
+		tasks.setItems(data.tasks[id]);
+		pages.show('listView');
 	});
 
-	pages.show('mainView');
-}, 5000);
+	$('#page-tasks').on('swipeRight', function() {
+		pages.show('mainView');
+	});
+
+	setTimeout(function() {
+		$('#load-placeholder').remove();
+		pages.show('mainView');
+	}, 1000);
+
+});

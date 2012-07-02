@@ -27,6 +27,11 @@
 
 		<!-- TASKS PAGE -->
 		<div id="page-tasks" class="page">
+			<header>MY LISTS</header>
+			<div class="body">
+				<div id="tasks-container" class="list"></div>
+			</div>
+			<footer>FOOTER</header>
 		</div>
 		<!-- END TASKS PAGE -->
 
@@ -35,10 +40,20 @@
 
 		<!-- Scripts -->
 		<script type="text/javascript" src="js/lib/mustache.js"></script>
-		<script type="text/javascript" src="js/render.js"></script>
-		<script type="text/javascript" src="js/Base.js"></script>
-		<script type="text/javascript" src="js/dom.js"></script>
-		<script type="text/javascript" src="js/Switcher.js"></script>
+		<script type="text/javascript" src="js/lib/zepto.js"></script>
+		<script type="text/javascript" src="js/lib/require.js"></script>
+		<script type="text/javascript">
+			require.config({ baseUrl: "js" });
+
+			require(["lib/mustache", "lib/zepto", './main'],
+				function() {
+					//This function will be called when all the dependencies
+					//listed above are loaded. Note that this function could
+					//be called before the page is loaded.
+					//This callback is optional.
+				}
+			);
+		</script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
