@@ -2,33 +2,43 @@
 <html>
 	<head>
 		<title>GKP</title>
-
-    <style type="text/css">
-      .page {
-        width: 100%;
-        height: 100%;
-        display: none;
-      }
-
-      .current {
-        display: block;
-      }
-
-      div {
-        border: 1px solid red;
-      }
-
-    </style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 
 	<body>
-	  <div id="load-placeholder">Loading...</div>
+		<div id="load-placeholder">Loading...</div>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/lib/mustache.js"></script>
-    <script type="text/javascript" src="js/render.js"></script>
-    <script type="text/javascript" src="js/Base.js"></script>
-    <script type="text/javascript" src="js/Switcher.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
+
+
+		<!-- LISTS PAGE -->
+		<div id="page-lists" class="page">
+			<header>MY LISTS</header>
+			<div class="body">
+				<div id="lists-container" class="list"></div>
+			</div>
+			<footer>FOOTER</header>
+		</div>
+		<!-- END LISTS PAGE -->
+
+
+
+		<!-- TASKS PAGE -->
+		<div id="page-tasks" class="page">
+		</div>
+		<!-- END TASKS PAGE -->
+
+
+
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/lib/mustache.js"></script>
+		<script type="text/javascript" src="js/render.js"></script>
+		<script type="text/javascript" src="js/Base.js"></script>
+		<script type="text/javascript" src="js/dom.js"></script>
+		<script type="text/javascript" src="js/Switcher.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

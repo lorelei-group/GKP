@@ -1,0 +1,64 @@
+html, body {
+	background-color: light gray;
+	border-width: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#load-placeholder {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 40%;
+
+	vertical-align: center;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.page {
+	display: none;
+}
+.page > * {
+	position: absolute;
+	overflow: hidden;
+	right: 0;
+	left: 0;
+}
+
+header {
+	background-color: gray;
+	text-align: center;
+	font-weight: bold;
+	height: 1.4em;
+	color: white;
+	top: 0;
+}
+footer {
+	background-color: red;
+	opacity: 0.5;
+	height: 3em;
+	bottom: 0;
+}
+.body {
+	overflow: auto;
+	bottom: 3em;
+	top: 1.4em;
+}
+
+
+.listItem {
+	padding: 1em 3em;
+}
+.listItem:nth-child(odd) {
+	background-color: #ddd;
+}
+.listItem:nth-child(even) {
+	background-color: #bbb;
+}
+.selected {
+	background-image: url(../img/check.gif);
+	background-repeat: no-repeat;
+	background-position: 1em center;
+}

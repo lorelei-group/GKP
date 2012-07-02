@@ -2,11 +2,11 @@ var Switcher = Base.extend({
 
 	constructor: function() {
 		this._elements = {};
+		this._current = null;
 	},
 
 	add: function(id, element) {
 		this._elements[id] = element;
-		element.style.display = 'none';
 	},
 
 	get: function(id) {
@@ -20,10 +20,10 @@ var Switcher = Base.extend({
 		if (!target)
 			throw new Error('Unknown id --[' + id + ']--');
 
-		for (var i in els)
-			if (els.hasOwnProperty(i) && els[i] !== target)
-				els[i].style.display = 'none';
+		if (this._current)
+			els[this._current].style.display = 'none';
 
+		this._current = id;
 		target.style.display = 'block';
 	}
 
