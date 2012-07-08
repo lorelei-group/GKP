@@ -1,3 +1,30 @@
+require.config({
+	baseUrl: "js",
+
+	paths: {
+		zepto: 'lib/zepto-require',
+		jQuery: 'lib/zepto-require',
+		backbone: 'lib/backbone-require',
+		mustache: 'lib/mustache-require'
+	}
+});
+
+require([
+
+	//'./app',
+	'backbone',
+	'mustache',
+	'zepto'
+
+], function(back, mus, $) {
+
+	debugger;
+	//App.init();
+
+});
+
+
+/*
 define(['./data', './list', './switcher'], function(data, List, Switcher) {
 
 	var pages = new Switcher();
@@ -28,3 +55,4 @@ define(['./data', './list', './switcher'], function(data, List, Switcher) {
 	}, 1000);
 
 });
+*/
