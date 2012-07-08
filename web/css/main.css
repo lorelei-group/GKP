@@ -48,13 +48,13 @@ footer {
 }
 
 
-.listItem {
+li {
 	padding: 1em 3em;
 }
-.listItem:nth-child(odd) {
+li:nth-child(odd) {
 	background-color: #ddd;
 }
-.listItem:nth-child(even) {
+li:nth-child(even) {
 	background-color: #bbb;
 }
 .selected {
@@ -63,10 +63,10 @@ footer {
 	background-position: 1em center;
 }
 
-#page-lists .listItem:nth-child(1) { background-color: #0F7FFF; }
-#page-lists .listItem:nth-child(2) { background-color: #0F8BFF; }
-#page-lists .listItem:nth-child(3) { background-color: #0F97FF; }
-#page-lists .listItem {
+#page-lists li:nth-child(1) { background-color: #0F7FFF; }
+#page-lists li:nth-child(2) { background-color: #0F8BFF; }
+#page-lists li:nth-child(3) { background-color: #0F97FF; }
+#page-lists li {
 	border-top: 1px solid rgba(255, 255, 255, 0.07);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }

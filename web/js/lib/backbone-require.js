@@ -1,21 +1,12 @@
 define([
 
-	'zepto',
-	'lib/underscore',
+	'lib/removeGlobal',
+	'Zepto',
+	'Underscore',
 	'lib/backbone'
 
-], function() {
-
-	window._ = null;
-	delete window._;
-
-	window.$ = null;
-	delete window.$;
-
-	var back = window.Backbone;
-	window.Backbone = null;
-	delete window.Backbone;
-
-	return back;
-
+], function(removeGlobal) {
+	removeGlobal('Zepto');
+	removeGlobal('_');
+	return removeGlobal('Backbone');
 });

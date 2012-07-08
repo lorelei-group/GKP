@@ -1,25 +1,22 @@
 require.config({
-	baseUrl: "js",
-
 	paths: {
-		zepto: 'lib/zepto-require',
-		jQuery: 'lib/zepto-require',
-		backbone: 'lib/backbone-require',
-		mustache: 'lib/mustache-require'
+		Zepto: 'lib/zepto-require',
+		Underscore: 'lib/underscore-require',
+		Backbone: 'lib/backbone-require',
+		Mustache: 'lib/mustache-require'
 	}
 });
 
 require([
 
-	//'./app',
-	'backbone',
-	'mustache',
-	'zepto'
+	'./app',
 
-], function(back, mus, $) {
+	'Zepto',
+	'Underscore'
 
-	debugger;
-	//App.init();
+], function(App) {
+
+	App.init();
 
 });
 
