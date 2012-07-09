@@ -1,4 +1,6 @@
 <ul>
 	{{^.}}Tap to create a list{{/.}}
-	{{#.}}{{&.}}{{/.}}
+	{{#.}}
+		<li data-id="{{id}}">{{name}}</li>
+	{{/.}}
 </ul>

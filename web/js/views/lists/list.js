@@ -5,22 +5,25 @@ define([
 	'Mustache',
 
 	'collections/lists',
-	'views/lists/item',
 	'text!../../../templates/lists/list.html'
 
-], function($, Backbone, Mustache, ListCollection, renderList, template) {
+], function($, Backbone, Mustache, ListCollection, template) {
 
 	var ListListView = Backbone.View.extend({
 
 		render: function() {
-			var collection = new ListCollection;
-			collection.add({
+			var collection = new ListCollection([{
 				id: 'temp',
 				name: "Todo tomorrow"
-			});
+			}, {
+				id: 'tamp',
+				name: "Todo today"
+			}, {
+				id: 'pepe',
+				name: "Todo never"
+			}]);
 
-			items = collection.map(renderList);
-			return Mustache.render(template, items);
+			return Mustache.render(template, collection.toJSON());
 		}
 	});
 
