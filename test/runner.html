@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spec Runner</title>
+
+		<!-- MOCHA -->
+		<link rel="stylesheet" type="text/css" href="lib/mocha.css" />
+		<script type="text/javascript" src="lib/mocha.js"></script>
+		<script type="text/javascript" src="lib/mocha_adapter.js"></script>
+		<script type="text/javascript" src="lib/sinon-1.3.4.js"></script>
+		<script type="text/javascript" src="lib/expect.js"></script>
+		<script type="text/javascript" src="lib/expectSinon.js"></script>
+		<script type="text/javascript">mocha.setup("bdd");</script>
+		<!-- ... -->
+
+		<script>
+			if (location.hash === '#testem')
+				document.write('<script src="/testem.js"></'+'script>')
+		</script>
+
+		<!-- global lib includes -->
+		<script data-main="main.js" type="text/javascript" src="../lib/require.js"></script>
+		<!-- ... -->
+	</head>
+	<body>
+		<div id="mocha"></div>
+	</body>
+</html>
