@@ -11,7 +11,8 @@ require.config({
 });
 
 require([
-	'test/base.spec'
+	'test/core/emitter.spec',
+	'test/core/base.spec'
 ], function() {
 	mocha.run();
 });
