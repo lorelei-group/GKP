@@ -1,9 +1,3 @@
-function funct(name) {
-	return function(item) {
-		item[name]();
-	};
-}
-
 define(function() {
 	"use strict";
 
